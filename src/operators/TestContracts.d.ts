@@ -18,4 +18,7 @@ export interface ITestOpDef {
  * tested by a TestOp test function
  */
 export declare type TestValue = string | number | Date;
+export interface ILogicalTestFunction {
+    (results: boolean[]): boolean;
+}
 //# sourceMappingURL=TestContracts.d.ts.map

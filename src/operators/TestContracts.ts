@@ -23,3 +23,7 @@ export type TestValue =
     | string
     | number
     | Date;
+
+export interface ILogicalTestFunction {
+    (results : boolean[]) : boolean
+}

@@ -1,5 +1,5 @@
 import { TestFunctionFactory } from "./TestFunctionFactory";
-import { ITestOpDef, TestValue } from "./TestContracts";
+import { ITestOpDef } from "./TestContracts";
 export declare class TestOp {
     private attr;
     private operator;
@@ -24,10 +24,9 @@ export declare class TestOp {
      * Evaluate whether data point matches expectation
      *
      * @param datum  The data object to test
-     * @param value  The value to evaluate
      *
      * @returns  True if the datapoint matches expectation and false if not
      */
-    test(datum: any, value: TestValue): boolean;
+    test(datum: any): boolean;
 }
 //# sourceMappingURL=TestOp.d.ts.map

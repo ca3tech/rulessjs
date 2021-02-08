@@ -29,21 +29,21 @@ mocha.describe("TestOp", function () {
             const xval = "value";
             const obj = { key: xval };
             const top = new TestOp_1.TestOp({ attr: "key", op: "=", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key = ${xval}`, "description value");
         });
         mocha.it("numbers", function () {
             const xval = 1;
             const obj = { key: xval };
             const top = new TestOp_1.TestOp({ attr: "key", op: "=", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key = ${xval}`, "description value");
         });
         mocha.it("dates", function () {
             const xval = new Date("2020-01-20");
             const obj = { key: xval };
             const top = new TestOp_1.TestOp({ attr: "key", op: "=", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key = ${xval}`, "description value");
         });
     });
@@ -52,21 +52,21 @@ mocha.describe("TestOp", function () {
             const xval = "value";
             const obj = { key: "other value" };
             const top = new TestOp_1.TestOp({ attr: "key", op: "!=", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key != ${xval}`, "description value");
         });
         mocha.it("numbers", function () {
             const xval = 1;
             const obj = { key: 2 };
             const top = new TestOp_1.TestOp({ attr: "key", op: "!=", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key != ${xval}`, "description value");
         });
         mocha.it("dates", function () {
             const xval = new Date("2020-01-20T12:00:00Z");
             const obj = { key: new Date("2020-01-20T12:00:01Z") };
             const top = new TestOp_1.TestOp({ attr: "key", op: "!=", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key != ${xval}`, "description value");
         });
     });
@@ -75,21 +75,21 @@ mocha.describe("TestOp", function () {
             const xval = "value1";
             const obj = { key: "value2" };
             const top = new TestOp_1.TestOp({ attr: "key", op: ">", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key > ${xval}`, "description value");
         });
         mocha.it("numbers", function () {
             const xval = 1;
             const obj = { key: 2 };
             const top = new TestOp_1.TestOp({ attr: "key", op: ">", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key > ${xval}`, "description value");
         });
         mocha.it("dates", function () {
             const xval = new Date("2020-01-20T12:00:00Z");
             const obj = { key: new Date("2020-01-20T12:00:01Z") };
             const top = new TestOp_1.TestOp({ attr: "key", op: ">", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key > ${xval}`, "description value");
         });
     });
@@ -99,8 +99,8 @@ mocha.describe("TestOp", function () {
             const eobj = { key: xval };
             const gobj = { key: "value2" };
             const top = new TestOp_1.TestOp({ attr: "key", op: ">=", expect: xval });
-            assert.ok(top.test(eobj, xval), "equal test value");
-            assert.ok(top.test(gobj, xval), "greater test value");
+            assert.ok(top.test(eobj), "equal test value");
+            assert.ok(top.test(gobj), "greater test value");
             assert.strictEqual(top.description, `key >= ${xval}`, "description value");
         });
         mocha.it("numbers", function () {
@@ -108,8 +108,8 @@ mocha.describe("TestOp", function () {
             const eobj = { key: xval };
             const gobj = { key: 2 };
             const top = new TestOp_1.TestOp({ attr: "key", op: ">=", expect: xval });
-            assert.ok(top.test(eobj, xval), "equal test value");
-            assert.ok(top.test(gobj, xval), "greater test value");
+            assert.ok(top.test(eobj), "equal test value");
+            assert.ok(top.test(gobj), "greater test value");
             assert.strictEqual(top.description, `key >= ${xval}`, "description value");
         });
         mocha.it("dates", function () {
@@ -117,8 +117,8 @@ mocha.describe("TestOp", function () {
             const eobj = { key: xval };
             const gobj = { key: new Date("2020-01-20T12:00:01Z") };
             const top = new TestOp_1.TestOp({ attr: "key", op: ">=", expect: xval });
-            assert.ok(top.test(eobj, xval), "equal test value");
-            assert.ok(top.test(gobj, xval), "greater test value");
+            assert.ok(top.test(eobj), "equal test value");
+            assert.ok(top.test(gobj), "greater test value");
             assert.strictEqual(top.description, `key >= ${xval}`, "description value");
         });
     });
@@ -127,21 +127,21 @@ mocha.describe("TestOp", function () {
             const xval = "value2";
             const obj = { key: "value1" };
             const top = new TestOp_1.TestOp({ attr: "key", op: "<", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key < ${xval}`, "description value");
         });
         mocha.it("numbers", function () {
             const xval = 2;
             const obj = { key: 1 };
             const top = new TestOp_1.TestOp({ attr: "key", op: "<", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key < ${xval}`, "description value");
         });
         mocha.it("dates", function () {
             const xval = new Date("2020-01-20T12:00:01Z");
             const obj = { key: new Date("2020-01-20T12:00:00Z") };
             const top = new TestOp_1.TestOp({ attr: "key", op: "<", expect: xval });
-            assert.ok(top.test(obj, xval), "test value");
+            assert.ok(top.test(obj), "test value");
             assert.strictEqual(top.description, `key < ${xval}`, "description value");
         });
     });
@@ -151,8 +151,8 @@ mocha.describe("TestOp", function () {
             const eobj = { key: xval };
             const gobj = { key: "value1" };
             const top = new TestOp_1.TestOp({ attr: "key", op: "<=", expect: xval });
-            assert.ok(top.test(eobj, xval), "equal test value");
-            assert.ok(top.test(gobj, xval), "lesser test value");
+            assert.ok(top.test(eobj), "equal test value");
+            assert.ok(top.test(gobj), "lesser test value");
             assert.strictEqual(top.description, `key <= ${xval}`, "description value");
         });
         mocha.it("numbers", function () {
@@ -160,8 +160,8 @@ mocha.describe("TestOp", function () {
             const eobj = { key: xval };
             const gobj = { key: 1 };
             const top = new TestOp_1.TestOp({ attr: "key", op: "<=", expect: xval });
-            assert.ok(top.test(eobj, xval), "equal test value");
-            assert.ok(top.test(gobj, xval), "lesser test value");
+            assert.ok(top.test(eobj), "equal test value");
+            assert.ok(top.test(gobj), "lesser test value");
             assert.strictEqual(top.description, `key <= ${xval}`, "description value");
         });
         mocha.it("dates", function () {
@@ -169,8 +169,8 @@ mocha.describe("TestOp", function () {
             const eobj = { key: xval };
             const gobj = { key: new Date("2020-01-20T12:00:00Z") };
             const top = new TestOp_1.TestOp({ attr: "key", op: "<=", expect: xval });
-            assert.ok(top.test(eobj, xval), "equal test value");
-            assert.ok(top.test(gobj, xval), "lesser test value");
+            assert.ok(top.test(eobj), "equal test value");
+            assert.ok(top.test(gobj), "lesser test value");
             assert.strictEqual(top.description, `key <= ${xval}`, "description value");
         });
     });

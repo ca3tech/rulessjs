@@ -32,11 +32,10 @@ class TestOp {
      * Evaluate whether data point matches expectation
      *
      * @param datum  The data object to test
-     * @param value  The value to evaluate
      *
      * @returns  True if the datapoint matches expectation and false if not
      */
-    test(datum, value) {
+    test(datum) {
         return this.tester(datum, this.attr, this.expect);
     }
 }
