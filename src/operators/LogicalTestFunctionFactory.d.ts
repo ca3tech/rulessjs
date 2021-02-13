@@ -3,6 +3,13 @@ export declare class LogicalTestFunctionFactory {
     private testFuns;
     constructor();
     /**
+     * Determine whether a given operator is valid
+     *
+     * @param operator  The operator to test for validity
+     * @returns  True if operator is valid else false
+     */
+    isValidOperator(operator: string): boolean;
+    /**
      * Extend the set of known operators
      *
      * @param operator  The new operator

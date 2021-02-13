@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogicalOp = void 0;
 const LogicalTestFunctionFactory_1 = require("./LogicalTestFunctionFactory");
-class LogicalOp {
+const Operator_1 = require("./Operator");
+class LogicalOp extends Operator_1.Operator {
     /**
      * Create a new LogicalOp object
      *
@@ -12,6 +13,7 @@ class LogicalOp {
      * @returns  A new LogicalOp object
      */
     constructor(op, testOps, testFunFactory) {
+        super();
         this.op = op;
         this.testOps = testOps;
         if (testFunFactory === undefined) {

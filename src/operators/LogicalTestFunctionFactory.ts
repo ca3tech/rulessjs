@@ -12,6 +12,16 @@ export class LogicalTestFunctionFactory {
     }
 
     /**
+     * Determine whether a given operator is valid
+     * 
+     * @param operator  The operator to test for validity
+     * @returns  True if operator is valid else false
+     */
+    public isValidOperator(operator : string) : boolean {
+        return Object.keys(this.testFuns).includes(operator);
+    }
+
+    /**
      * Extend the set of known operators
      * 
      * @param operator  The new operator

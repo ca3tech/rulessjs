@@ -1,7 +1,8 @@
 import {TestFunctionFactory} from "./TestFunctionFactory";
 import {ITestOpDef, ITestFunction, TestValue} from "./TestContracts";
+import { Operator } from "./Operator";
 
-export class TestOp {
+export class TestOp extends Operator {
     private attr : string;
     private operator : string;
     private expect : any;
@@ -16,6 +17,7 @@ export class TestOp {
      * @returns  A new TestOp object
      */
     constructor(def : ITestOpDef, testFunFactory? : TestFunctionFactory) {
+        super();
         this.attr = def.attr;
         this.operator = def.op;
         this.expect = def.expect;

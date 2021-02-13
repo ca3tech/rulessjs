@@ -1,8 +1,9 @@
 import { LogicalTestFunctionFactory } from "./LogicalTestFunctionFactory";
+import { Operator } from "./Operator";
 import { ILogicalTestFunction } from "./TestContracts";
 import { TestOp } from "./TestOp";
 
-export class LogicalOp {
+export class LogicalOp extends Operator {
     private op : string;
     private testOps : TestOp[];
     private tester : ILogicalTestFunction;
@@ -16,6 +17,7 @@ export class LogicalOp {
      * @returns  A new LogicalOp object
      */
     constructor(op : string, testOps : TestOp[], testFunFactory? : LogicalTestFunctionFactory) {
+        super();
         this.op = op;
         this.testOps = testOps;
         if(testFunFactory === undefined) {

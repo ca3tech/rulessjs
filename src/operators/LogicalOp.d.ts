@@ -1,6 +1,7 @@
 import { LogicalTestFunctionFactory } from "./LogicalTestFunctionFactory";
+import { Operator } from "./Operator";
 import { TestOp } from "./TestOp";
-export declare class LogicalOp {
+export declare class LogicalOp extends Operator {
     private op;
     private testOps;
     private tester;

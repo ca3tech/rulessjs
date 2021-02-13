@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TestOp = void 0;
 const TestFunctionFactory_1 = require("./TestFunctionFactory");
-class TestOp {
+const Operator_1 = require("./Operator");
+class TestOp extends Operator_1.Operator {
     /**
      * Create a new TestOp object
      *
@@ -12,6 +13,7 @@ class TestOp {
      * @returns  A new TestOp object
      */
     constructor(def, testFunFactory) {
+        super();
         this.attr = def.attr;
         this.operator = def.op;
         this.expect = def.expect;

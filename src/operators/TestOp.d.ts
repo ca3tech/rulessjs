@@ -1,6 +1,7 @@
 import { TestFunctionFactory } from "./TestFunctionFactory";
 import { ITestOpDef } from "./TestContracts";
-export declare class TestOp {
+import { Operator } from "./Operator";
+export declare class TestOp extends Operator {
     private attr;
     private operator;
     private expect;
