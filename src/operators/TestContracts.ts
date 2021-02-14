@@ -27,3 +27,7 @@ export type TestValue =
 export interface ILogicalTestFunction {
     (results : boolean[]) : boolean
 }
+
+export interface ITestDatum {
+    [attr : string] : string | string[] | number | number[] | Date | Date[];
+}

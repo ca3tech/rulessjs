@@ -1,4 +1,4 @@
-import { IPipelineNodeDescription } from "./ModelContracts";
+import { IModelDatum, IPipelineNodeDescription } from "./ModelContracts";
 import { PipelineNode } from "./PipelineNode";
 export declare class Pipeline {
     private h;
@@ -65,5 +65,6 @@ export declare class Pipeline {
      * @returns  The first PipelineNode
      */
     get head(): PipelineNode;
+    apply(datum: IModelDatum): IModelDatum;
 }
 //# sourceMappingURL=Pipeline.d.ts.map

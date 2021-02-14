@@ -1,7 +1,7 @@
-import { IModelDescription } from "./model/ModelContracts";
+import { IModelDatum, IModelDescription } from "./model/ModelContracts";
 import { Pipeline } from "./model/Pipeline";
 
-export { IModelDescription };
+export { IModelDatum, IModelDescription };
 
 export class Model {
     private pipe : Pipeline;
@@ -57,6 +57,19 @@ export class Model {
      */
     constructor(description : IModelDescription) {
         this.pipe = new Pipeline(description);
+    }
+
+    /**
+     * Apply the model to the observations
+     * 
+     * @param data  The observational data
+     * @returns  The input data possibly with model
+     *           result attributes added
+     */
+    public apply(data : IModelDatum[]) : IModelDatum[] {
+        return data.map((datum : IModelDatum) => {
+            return this.pipeline.apply(datum);
+        });
     }
 
     protected get pipeline() : Pipeline {

@@ -1,6 +1,6 @@
-import { IModelDescription } from "./model/ModelContracts";
+import { IModelDatum, IModelDescription } from "./model/ModelContracts";
 import { Pipeline } from "./model/Pipeline";
-export { IModelDescription };
+export { IModelDatum, IModelDescription };
 export declare class Model {
     private pipe;
     /**
@@ -53,6 +53,14 @@ export declare class Model {
      * const model = new Model(def);
      */
     constructor(description: IModelDescription);
+    /**
+     * Apply the model to the observations
+     *
+     * @param data  The observational data
+     * @returns  The input data possibly with model
+     *           result attributes added
+     */
+    apply(data: IModelDatum[]): IModelDatum[];
     protected get pipeline(): Pipeline;
 }
 //# sourceMappingURL=index.d.ts.map

@@ -1,4 +1,4 @@
-import { IPipelineNodeDescription } from "./ModelContracts";
+import { IModelDatum, IPipelineNodeDescription } from "./ModelContracts";
 import { PipelineNode } from "./PipelineNode";
 
 export class Pipeline {
@@ -83,5 +83,18 @@ export class Pipeline {
      */
     public get head() : PipelineNode {
         return this.h;
+    }
+
+    public apply(datum : IModelDatum) : IModelDatum {
+        for(let node : PipelineNode = this.head; node !== undefined; node = node.next) {
+            let v : any = node.output.false;
+            if(node.operator.test(datum)) {
+                v = node.output.true;
+            }
+            if(v !== undefined) {
+                datum[node.output.name] = v;
+            }
+        }
+        return datum;
     }
 }

@@ -10,7 +10,8 @@ export interface IOperatorDescription {
 }
 export interface IPipelineNodeOutput {
     name?: string;
-    value: string;
+    true: string;
+    false?: string;
 }
 export interface IPipelineNodeDef {
     [op: string]: ITestOpExpect | ITestOpDescription | ITestOpDescription[] | IPipelineNodeOutput;
@@ -44,7 +45,8 @@ export interface IPipelineNodeDescription {
  *     },
  *     output: {
  *       name: "col1_is_1",
- *       value: "PASS"
+ *       true: "PASS",
+ *       false: "FAIL"
  *     }
  *   },
  *   col2_is_2: {
@@ -53,7 +55,8 @@ export interface IPipelineNodeDescription {
  *       value: 2
  *     },
  *     output: {
- *       value: "PASS"
+ *       true: "PASS",
+ *       false: "FAIL"
  *     }
  *   },
  *   all_pass: {
@@ -72,10 +75,20 @@ export interface IPipelineNodeDescription {
  *       }
  *     ],
  *     output: {
- *       value: "PASS"
+ *       true: "PASS",
+ *       false: "FAIL"
  *     }
  *   }
  * }
  */
 export { IPipelineNodeDescription as IModelDescription };
+/**
+ * Defines the structure of data to which model can be applied
+ *
+ * @description
+ * This defines the structure of data to which model can be applied.
+ * To put simply it is an object with key values that may be
+ * string, number, Date or an array thereof.
+ */
+export { ITestDatum as IModelDatum } from "../operators/TestContracts";
 //# sourceMappingURL=ModelContracts.d.ts.map

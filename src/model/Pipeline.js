@@ -81,5 +81,17 @@ class Pipeline {
     get head() {
         return this.h;
     }
+    apply(datum) {
+        for (let node = this.head; node !== undefined; node = node.next) {
+            let v = node.output.false;
+            if (node.operator.test(datum)) {
+                v = node.output.true;
+            }
+            if (v !== undefined) {
+                datum[node.output.name] = v;
+            }
+        }
+        return datum;
+    }
 }
 exports.Pipeline = Pipeline;

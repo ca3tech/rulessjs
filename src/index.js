@@ -55,6 +55,18 @@ class Model {
     constructor(description) {
         this.pipe = new Pipeline_1.Pipeline(description);
     }
+    /**
+     * Apply the model to the observations
+     *
+     * @param data  The observational data
+     * @returns  The input data possibly with model
+     *           result attributes added
+     */
+    apply(data) {
+        return data.map((datum) => {
+            return this.pipeline.apply(datum);
+        });
+    }
     get pipeline() {
         return this.pipe;
     }
