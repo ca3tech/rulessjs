@@ -1,3 +1,4 @@
+import { ITestDatum } from "./TestContracts";
 
 export abstract class Operator {
     /**
@@ -14,5 +15,5 @@ export abstract class Operator {
      * 
      * @returns  True if the datapoint matches expectation and false if not
      */
-    public abstract test(datum : any) : boolean;
+    public abstract test(datum : ITestDatum) : boolean;
 }

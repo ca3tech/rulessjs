@@ -28,6 +28,8 @@ export interface ILogicalTestFunction {
     (results : boolean[]) : boolean
 }
 
+export {ILogicalTestFunction as IArrayTestFunction};
+
 export interface ITestDatum {
     [attr : string] : string | string[] | number | number[] | Date | Date[];
 }

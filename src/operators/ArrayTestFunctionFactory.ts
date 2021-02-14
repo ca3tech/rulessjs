@@ -1,4 +1,5 @@
 import { FunctionFactory } from "./FunctionFactory";
+import { IArrayTestFunction } from "./TestContracts";
 
 export class ArrayTestFunctionFactory extends FunctionFactory {
     constructor() {
@@ -6,6 +7,10 @@ export class ArrayTestFunctionFactory extends FunctionFactory {
             "all": all,
             "any": any
         });
+    }
+
+    public getTestFunction(operator : string) : IArrayTestFunction {
+        return super.getTestFunction(operator) as IArrayTestFunction;
     }
 }
 

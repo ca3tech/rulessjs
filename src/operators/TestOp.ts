@@ -1,5 +1,5 @@
 import {TestFunctionFactory} from "./TestFunctionFactory";
-import {ITestOpDef, ITestFunction, TestValue} from "./TestContracts";
+import {ITestOpDef, ITestFunction, TestValue, ITestDatum} from "./TestContracts";
 import { Operator } from "./Operator";
 
 export class TestOp extends Operator {
@@ -52,7 +52,7 @@ export class TestOp extends Operator {
      * 
      * @returns  True if the datapoint matches expectation and false if not
      */
-    public test(datum : any) : boolean {
+    public test(datum : ITestDatum) : boolean {
         return this.tester(datum, this.attr, this.expect);
     }
 }

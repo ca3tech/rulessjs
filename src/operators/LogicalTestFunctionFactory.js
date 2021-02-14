@@ -9,6 +9,9 @@ class LogicalTestFunctionFactory extends FunctionFactory_1.FunctionFactory {
             "or": or
         });
     }
+    getTestFunction(operator) {
+        return super.getTestFunction(operator);
+    }
 }
 exports.LogicalTestFunctionFactory = LogicalTestFunctionFactory;
 function and(results) {

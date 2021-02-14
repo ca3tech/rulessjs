@@ -1,5 +1,5 @@
 import { TestFunctionFactory } from "./TestFunctionFactory";
-import { ITestOpDef } from "./TestContracts";
+import { ITestOpDef, ITestDatum } from "./TestContracts";
 import { Operator } from "./Operator";
 export declare class TestOp extends Operator {
     private attr;
@@ -34,6 +34,6 @@ export declare class TestOp extends Operator {
      *
      * @returns  True if the datapoint matches expectation and false if not
      */
-    test(datum: any): boolean;
+    test(datum: ITestDatum): boolean;
 }
 //# sourceMappingURL=TestOp.d.ts.map

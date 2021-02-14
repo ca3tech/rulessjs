@@ -41,7 +41,8 @@ class ArrayOp extends Operator_1.Operator {
      */
     test(datum) {
         const attr = this.testOp.attributeName;
-        const rslts = datum[attr].map(v => {
+        const attrval = datum[attr];
+        const rslts = attrval.map((v) => {
             const doc = {};
             doc[attr] = v;
             return this.testOp.test(doc);

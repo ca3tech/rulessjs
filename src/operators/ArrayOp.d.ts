@@ -1,5 +1,6 @@
 import { ArrayTestFunctionFactory } from "./ArrayTestFunctionFactory";
 import { Operator } from "./Operator";
+import { ITestDatum } from "./TestContracts";
 import { TestOp } from "./TestOp";
 export declare class ArrayOp extends Operator {
     private op;
@@ -30,6 +31,6 @@ export declare class ArrayOp extends Operator {
      *
      * @returns  True if the datapoint matches expectation and false if not
      */
-    test(datum: any): boolean;
+    test(datum: ITestDatum): boolean;
 }
 //# sourceMappingURL=ArrayOp.d.ts.map

@@ -1,6 +1,6 @@
 import { ArrayTestFunctionFactory } from "./ArrayTestFunctionFactory";
 import { Operator } from "./Operator";
-import { IArrayTestFunction } from "./TestContracts";
+import { IArrayTestFunction, ITestDatum } from "./TestContracts";
 import { TestOp } from "./TestOp";
 
 export class ArrayOp extends Operator {
@@ -45,9 +45,10 @@ export class ArrayOp extends Operator {
      * 
      * @returns  True if the datapoint matches expectation and false if not
      */
-    public test(datum : any) : boolean {
+    public test(datum : ITestDatum) : boolean {
         const attr = this.testOp.attributeName;
-        const rslts = datum[attr].map(v => {
+        const attrval : any = datum[attr];
+        const rslts = attrval.map((v : string | number | Date) => {
             const doc : any = {};
             doc[attr] = v;
             return this.testOp.test(doc);

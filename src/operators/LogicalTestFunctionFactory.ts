@@ -1,4 +1,5 @@
 import { FunctionFactory } from "./FunctionFactory";
+import { ILogicalTestFunction } from "./TestContracts";
 
 export class LogicalTestFunctionFactory extends FunctionFactory {
     constructor() {
@@ -6,6 +7,10 @@ export class LogicalTestFunctionFactory extends FunctionFactory {
             "and": and,
             "or": or
         });
+    }
+
+    public getTestFunction(operator : string) : ILogicalTestFunction {
+        return super.getTestFunction(operator) as ILogicalTestFunction;
     }
 }
 

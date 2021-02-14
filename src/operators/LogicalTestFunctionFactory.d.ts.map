@@ -1,1 +1,1 @@
-{"version":3,"file":"LogicalTestFunctionFactory.d.ts","sourceRoot":"","sources":["LogicalTestFunctionFactory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AAEpD,qBAAa,0BAA2B,SAAQ,eAAe;;CAO9D"}
+{"version":3,"file":"LogicalTestFunctionFactory.d.ts","sourceRoot":"","sources":["LogicalTestFunctionFactory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,eAAe,EAAE,MAAM,mBAAmB,CAAC;AACpD,OAAO,EAAE,oBAAoB,EAAE,MAAM,iBAAiB,CAAC;AAEvD,qBAAa,0BAA2B,SAAQ,eAAe;;IAQpD,eAAe,CAAC,QAAQ,EAAG,MAAM,GAAI,oBAAoB;CAGnE"}

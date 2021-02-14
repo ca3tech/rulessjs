@@ -9,6 +9,9 @@ class ArrayTestFunctionFactory extends FunctionFactory_1.FunctionFactory {
             "any": any
         });
     }
+    getTestFunction(operator) {
+        return super.getTestFunction(operator);
+    }
 }
 exports.ArrayTestFunctionFactory = ArrayTestFunctionFactory;
 function all(results) {

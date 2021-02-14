@@ -1,6 +1,6 @@
 import { LogicalTestFunctionFactory } from "./LogicalTestFunctionFactory";
 import { Operator } from "./Operator";
-import { ILogicalTestFunction } from "./TestContracts";
+import { ILogicalTestFunction, ITestDatum } from "./TestContracts";
 import { TestOp } from "./TestOp";
 
 export class LogicalOp extends Operator {
@@ -42,7 +42,7 @@ export class LogicalOp extends Operator {
      * 
      * @returns  True if the datapoint matches expectation and false if not
      */
-    public test(datum : any) : boolean {
+    public test(datum : ITestDatum) : boolean {
         return this.tester(this.testOps.map(op => op.test(datum)));
     }
 }
