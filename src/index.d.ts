@@ -1,5 +1,6 @@
-import { IPipelineNodeDescription } from "./model/ModelContracts";
+import { IModelDescription } from "./model/ModelContracts";
 import { Pipeline } from "./model/Pipeline";
+export { IModelDescription };
 export declare class Model {
     private pipe;
     /**
@@ -51,7 +52,7 @@ export declare class Model {
      * };
      * const model = new Model(def);
      */
-    constructor(description: IPipelineNodeDescription);
+    constructor(description: IModelDescription);
     protected get pipeline(): Pipeline;
 }
 //# sourceMappingURL=index.d.ts.map

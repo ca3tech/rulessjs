@@ -16,6 +16,12 @@ export declare class TestOp extends Operator {
      */
     constructor(def: ITestOpDef, testFunFactory?: TestFunctionFactory);
     /**
+     * Get the name of the attribute under test
+     *
+     * @returns  The name of the attribute
+     */
+    get attributeName(): string;
+    /**
      * The operation definition as a string
      *
      * @returns  The description

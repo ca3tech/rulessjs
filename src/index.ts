@@ -1,6 +1,7 @@
-import { Pipe } from "stream";
-import { IPipelineNodeDescription } from "./model/ModelContracts";
+import { IModelDescription } from "./model/ModelContracts";
 import { Pipeline } from "./model/Pipeline";
+
+export { IModelDescription };
 
 export class Model {
     private pipe : Pipeline;
@@ -54,7 +55,7 @@ export class Model {
      * };
      * const model = new Model(def);
      */
-    constructor(description : IPipelineNodeDescription) {
+    constructor(description : IModelDescription) {
         this.pipe = new Pipeline(description);
     }
 

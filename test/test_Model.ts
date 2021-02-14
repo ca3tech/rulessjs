@@ -5,6 +5,7 @@ import { TestOp } from "../src/operators/TestOp";
 import { Pipeline } from "../src/model/Pipeline";
 import { IPipelineNodeDescription } from "../src/model/ModelContracts";
 import { LogicalOp } from "../src/operators/LogicalOp";
+import { ArrayOp } from "../src/operators/ArrayOp";
 
 mocha.describe("Model", function() {
     mocha.describe("construction", function() {
@@ -221,6 +222,71 @@ mocha.describe("Model", function() {
             pnode = pnode.next;
             assert.ok(pnode.operator instanceof LogicalOp, "node 2 operator is LogicalOp");
             assert.strictEqual(pnode.operator.description, "condition1 = PASS and col3 = 3", "node 2 operator description");
+            assert.strictEqual(pnode.output.name, "condition2", "output.name");
+            assert.strictEqual(pnode.output.value, "PASS", "output.value");
+            assert.strictEqual(pnode.next, undefined, "node 2 next is undefined");
+        });
+
+        mocha.it("one ArrayOp node", function() {
+            const desc : IPipelineNodeDescription = {
+                condition1: {
+                    "all": {
+                        "=": {
+                            attr: "col1",
+                            value: 1
+                        }
+                    },
+                    output: {
+                        value: "PASS"
+                    }
+                }
+            };
+            const mod = new MyModel(desc);
+            const pipe = mod.pipeline;
+            let pnode = pipe.head;
+            assert.ok(pnode.operator instanceof ArrayOp, "node 1 operator is ArrayOp");
+            assert.strictEqual(pnode.operator.description, "all(col1 = 1)", "node 1 operator description");
+            assert.strictEqual(pnode.output.name, "condition1", "output.name");
+            assert.strictEqual(pnode.output.value, "PASS", "output.value");
+            assert.strictEqual(pnode.next, undefined, "node 1 next is undefined");
+        });
+
+        mocha.it("two ArrayOp nodes", function() {
+            const desc : IPipelineNodeDescription = {
+                condition1: {
+                    "all": {
+                        "=": {
+                            attr: "col1",
+                            value: 1
+                        }
+                    },
+                    output: {
+                        value: "PASS"
+                    }
+                },
+                condition2: {
+                    "any": {
+                        "=": {
+                            attr: "col2",
+                            value: 2
+                        }
+                    },
+                    output: {
+                        value: "PASS"
+                    }
+                }
+            };
+            const mod = new MyModel(desc);
+            const pipe = mod.pipeline;
+            let pnode = pipe.head;
+            assert.ok(pnode.operator instanceof ArrayOp, "node 1 operator is ArrayOp");
+            assert.strictEqual(pnode.operator.description, "all(col1 = 1)", "node 1 operator description");
+            assert.strictEqual(pnode.output.name, "condition1", "output.name");
+            assert.strictEqual(pnode.output.value, "PASS", "output.value");
+            assert.notStrictEqual(pnode.next, undefined, "node 1 next is not undefined");
+            pnode = pnode.next;
+            assert.ok(pnode.operator instanceof ArrayOp, "node 2 operator is ArrayOp");
+            assert.strictEqual(pnode.operator.description, "any(col2 = 2)", "node 2 operator description");
             assert.strictEqual(pnode.output.name, "condition2", "output.name");
             assert.strictEqual(pnode.output.value, "PASS", "output.value");
             assert.strictEqual(pnode.next, undefined, "node 2 next is undefined");

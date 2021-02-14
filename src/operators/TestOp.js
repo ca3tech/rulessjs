@@ -23,6 +23,14 @@ class TestOp extends Operator_1.Operator {
         this.tester = testFunFactory.getTestFunction(def.op);
     }
     /**
+     * Get the name of the attribute under test
+     *
+     * @returns  The name of the attribute
+     */
+    get attributeName() {
+        return this.attr;
+    }
+    /**
      * The operation definition as a string
      *
      * @returns  The description

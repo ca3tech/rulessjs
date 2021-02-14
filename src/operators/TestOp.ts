@@ -28,6 +28,15 @@ export class TestOp extends Operator {
     }
 
     /**
+     * Get the name of the attribute under test
+     * 
+     * @returns  The name of the attribute
+     */
+    public get attributeName() : string {
+        return this.attr;
+    }
+
+    /**
      * The operation definition as a string
      * 
      * @returns  The description
