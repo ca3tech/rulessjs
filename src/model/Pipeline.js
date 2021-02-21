@@ -9,7 +9,7 @@ class Pipeline {
      * @param description  The model
      * @returns  A new Pipeline object
      *
-     * @example
+     * ### example
      * ```typescript
      * const model = {
      *   condition1: {

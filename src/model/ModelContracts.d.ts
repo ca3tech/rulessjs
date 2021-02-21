@@ -20,7 +20,7 @@ export interface IPipelineNodeDef {
 /**
  * Defines the structure of a Model description
  *
- * @description
+ * ### description
  * This interface defines the structure of the objects that
  * can be passed to the Model constructor. The attributes
  * of the object define the name of the step, and possibly
@@ -33,7 +33,7 @@ export interface IPipelineNodeDef {
  * that corresponds to the possible operators, e.g.
  * =, !=, and, or.
  *
- * @example
+ * ### example
  * ```typescript
  * const def = {
  *   test1: {

@@ -33,7 +33,7 @@ export {ILogicalTestFunction as IArrayTestFunction};
 /**
  * Defines the structure of data to which model can be applied
  * 
- * @description
+ * ### description
  * This defines the structure of data to which model can be applied.
  * To put simply it is an object with key values that may be
  * string, number, Date or an array thereof.

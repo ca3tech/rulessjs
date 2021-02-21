@@ -9,7 +9,7 @@ class Model {
      * @param description  The definition
      * @returns  A new Model object
      *
-     * @example
+     * ### example
      * ```typescript
      * const def = {
      *   condition1: {
