@@ -116,7 +116,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/0bfacaa/src/index.ts#L7">index.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/d7b068d/src/index.ts#L7">index.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -125,47 +125,51 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
-									<dd><p>const def = {
-											condition1: {
-											&quot;=&quot;: {
-											attr: &quot;col1&quot;,
-											value: 1
-											},
-											output: {
-											value: &quot;PASS&quot;
-											}
-											},
-											condition2: {
-											&quot;=&quot;: {
-											attr: &quot;col2&quot;,
-											value: 1
-											},
-											output: {
-											name: &quot;newattr&quot;,
-											value: &quot;PASS&quot;
-											}
-											},
-											condition3: {
-											&quot;and&quot; : [
-											{
-											&quot;=&quot;: {
-											attr: &quot;condition1&quot;,
-											value: &quot;PASS&quot;
-											}
-											},
-											{
-											&quot;=&quot;: {
-											attr: &quot;newattr&quot;,
-											value: &quot;PASS&quot;
-											}
-											}
-											],
-											output: {
-											value: &quot;PASS&quot;
-											}
-											}
-											};
-										const model = new Model(def);</p>
+									<dd><pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">def</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">condition1:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;col1&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #001080">output:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">       </span><span style="color: #001080">true:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">       </span><span style="color: #001080">false:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;FAIL&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">condition2:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;col2&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #001080">output:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">       </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;newattr&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">       </span><span style="color: #001080">true:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">       </span><span style="color: #001080">false:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;FAIL&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">condition3:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;and&quot;</span><span style="color: #001080"> :</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">          </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;condition1&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">      },</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">          </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;newattr&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">output:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">true:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">false:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;FAIL&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">};</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">model</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Model</span><span style="color: #000000">(</span><span style="color: #001080">def</span><span style="color: #000000">);</span>
+</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -192,7 +196,7 @@
 					<div class="tsd-signature tsd-kind-icon">pipe<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Pipeline</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/0bfacaa/src/index.ts#L7">index.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/d7b068d/src/index.ts#L7">index.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -209,7 +213,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/0bfacaa/src/index.ts#L75">index.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/d7b068d/src/index.ts#L80">index.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Pipeline</span></h4>
@@ -229,7 +233,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/0bfacaa/src/index.ts#L69">index.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/d7b068d/src/index.ts#L74">index.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

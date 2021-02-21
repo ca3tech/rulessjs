@@ -10,6 +10,7 @@ export declare class Model {
      * @returns  A new Model object
      *
      * @example
+     * ```typescript
      * const def = {
      *   condition1: {
      *     "=": {
@@ -17,7 +18,8 @@ export declare class Model {
      *       value: 1
      *     },
      *     output: {
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition2: {
@@ -27,7 +29,8 @@ export declare class Model {
      *     },
      *     output: {
      *        name: "newattr",
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition3: {
@@ -46,11 +49,13 @@ export declare class Model {
      *       }
      *     ],
      *     output: {
-     *       value: "PASS"
+     *       true: "PASS",
+     *       false: "FAIL"
      *     }
      *   }
      * };
      * const model = new Model(def);
+     * ```
      */
     constructor(description: IModelDescription);
     /**

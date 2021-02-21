@@ -13,6 +13,7 @@ export class Model {
      * @returns  A new Model object
      * 
      * @example
+     * ```typescript
      * const def = {
      *   condition1: {
      *     "=": {
@@ -20,7 +21,8 @@ export class Model {
      *       value: 1
      *     },
      *     output: {
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition2: {
@@ -30,7 +32,8 @@ export class Model {
      *     },
      *     output: {
      *        name: "newattr",
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition3: {
@@ -49,11 +52,13 @@ export class Model {
      *       }
      *     ],
      *     output: {
-     *       value: "PASS"
+     *       true: "PASS",
+     *       false: "FAIL"
      *     }
      *   }
      * };
      * const model = new Model(def);
+     * ```
      */
     constructor(description : IModelDescription) {
         this.pipe = new Pipeline(description);

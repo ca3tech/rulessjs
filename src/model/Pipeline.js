@@ -10,6 +10,7 @@ class Pipeline {
      * @returns  A new Pipeline object
      *
      * @example
+     * ```typescript
      * const model = {
      *   condition1: {
      *     "=": {
@@ -17,7 +18,8 @@ class Pipeline {
      *       value: 1
      *     },
      *     output: {
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition2: {
@@ -27,7 +29,8 @@ class Pipeline {
      *     },
      *     output: {
      *        name: "newattr",
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition3: {
@@ -46,11 +49,13 @@ class Pipeline {
      *       }
      *     ],
      *     output: {
-     *       value: "PASS"
+     *       true: "PASS",
+     *       false: "FAIL"
      *     }
      *   }
      * };
      * const pipe = new Pipeline(model);
+     * ```
      */
     constructor(description) {
         for (const name in description) {

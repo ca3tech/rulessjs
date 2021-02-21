@@ -12,6 +12,7 @@ export class Pipeline {
      * @returns  A new Pipeline object
      * 
      * @example
+     * ```typescript
      * const model = {
      *   condition1: {
      *     "=": {
@@ -19,7 +20,8 @@ export class Pipeline {
      *       value: 1
      *     },
      *     output: {
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition2: {
@@ -29,7 +31,8 @@ export class Pipeline {
      *     },
      *     output: {
      *        name: "newattr",
-     *        value: "PASS"
+     *        true: "PASS",
+     *        false: "FAIL"
      *     }
      *   },
      *   condition3: {
@@ -48,11 +51,13 @@ export class Pipeline {
      *       }
      *     ],
      *     output: {
-     *       value: "PASS"
+     *       true: "PASS",
+     *       false: "FAIL"
      *     }
      *   }
      * };
      * const pipe = new Pipeline(model);
+     * ```
      */
     constructor(description : IPipelineNodeDescription) {
         for(const name in description) {
