@@ -1,12 +1,12 @@
 import { Operator } from "../operators/Operator";
-import { IPipelineNodeDescription, IPipelineNodeOutput } from "./ModelContracts";
+import { IModelDescription, IModelNodeOutput } from "./ModelContracts";
 export declare class PipelineNode {
     private n;
     private op;
     private out;
-    constructor(description: IPipelineNodeDescription);
+    constructor(description: IModelDescription);
     get operator(): Operator;
-    get output(): IPipelineNodeOutput;
+    get output(): IModelNodeOutput;
     set next(node: PipelineNode);
     get next(): PipelineNode;
 }

@@ -3,14 +3,14 @@ import * as assert from "assert";
 import { Model } from "../src/index";
 import { TestOp } from "../src/operators/TestOp";
 import { Pipeline } from "../src/model/Pipeline";
-import { IPipelineNodeDescription } from "../src/model/ModelContracts";
+import { IModelDescription } from "../src/model/ModelContracts";
 import { LogicalOp } from "../src/operators/LogicalOp";
 import { ArrayOp } from "../src/operators/ArrayOp";
 
 mocha.describe("Model", function() {
     mocha.describe("construction", function() {
         mocha.it("one TestOp node", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -32,7 +32,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one TestOp node explicit output name", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -55,7 +55,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two TestOp nodes", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -92,7 +92,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one LogicalOp node", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "or" : [
                         {
@@ -124,7 +124,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two LogicalOp node", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "or" : [
                         {
@@ -181,7 +181,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one TestOp one LogicalOp node", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -228,7 +228,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one ArrayOp node", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "all": {
                         "=": {
@@ -252,7 +252,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two ArrayOp nodes", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "all": {
                         "=": {
@@ -295,7 +295,7 @@ mocha.describe("Model", function() {
 
     mocha.describe("apply", function() {
         mocha.it("one item, one number equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -318,7 +318,7 @@ mocha.describe("Model", function() {
         });
         
         mocha.it("one item, one number not equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "!=": {
                         attr: "col1",
@@ -341,7 +341,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one number greater test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     ">": {
                         attr: "col1",
@@ -364,7 +364,7 @@ mocha.describe("Model", function() {
         });
         
         mocha.it("one item, one number greater or equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     ">=": {
                         attr: "col1",
@@ -387,7 +387,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one number lesser test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "<": {
                         attr: "col1",
@@ -410,7 +410,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one number lesser or equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "<=": {
                         attr: "col1",
@@ -433,7 +433,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two items, one number equal test, both PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -459,7 +459,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one number equal test, FAIL", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -482,7 +482,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two items, one number equal test, one PASS, one FAIL", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -509,7 +509,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, two equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -544,7 +544,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one equal PASS, one equal FAIL", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -579,7 +579,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one array number equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "all": {
                         "=": {
@@ -604,7 +604,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two item, one array number equal test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "all": {
                         "=": {
@@ -633,7 +633,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one array number equal test, FAIL", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "all": {
                         "=": {
@@ -658,7 +658,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("two item, one array number equal test, one PASS, one FAIL", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "all": {
                         "=": {
@@ -687,7 +687,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, two equal test, one and test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -744,7 +744,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, two equal test, one or test, PASS", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",
@@ -801,7 +801,7 @@ mocha.describe("Model", function() {
         });
 
         mocha.it("one item, one equal test PASS, one equal test FAIL, one logical test FAIL", function() {
-            const desc : IPipelineNodeDescription = {
+            const desc : IModelDescription = {
                 condition1: {
                     "=": {
                         attr: "col1",

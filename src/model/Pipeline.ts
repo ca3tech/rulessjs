@@ -1,4 +1,4 @@
-import { IModelDatum, IPipelineNodeDescription } from "./ModelContracts";
+import { IModelDatum, IModelDescription } from "./ModelContracts";
 import { PipelineNode } from "./PipelineNode";
 
 export class Pipeline {
@@ -59,7 +59,7 @@ export class Pipeline {
      * const pipe = new Pipeline(model);
      * ```
      */
-    constructor(description : IPipelineNodeDescription) {
+    constructor(description : IModelDescription) {
         for(const name in description) {
             const ndesc : any = {};
             ndesc[name] = description[name];

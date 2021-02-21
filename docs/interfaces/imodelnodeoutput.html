@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IModelDatum | rulessjs</title>
+	<title>IModelNodeOutput | rulessjs</title>
 	<meta name="description" content="Documentation for rulessjs">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">rulessjs</a>
 				</li>
 				<li>
-					<a href="imodeldatum.html">IModelDatum</a>
+					<a href="imodelnodeoutput.html">IModelNodeOutput</a>
 				</li>
 			</ul>
-			<h1>Interface IModelDatum</h1>
+			<h1>Interface IModelNodeOutput</h1>
 		</div>
 	</div>
 </header>
@@ -68,38 +68,86 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Defines the structure of data to which model can be applied</p>
+						<p>Describes the output to produce for a given node</p>
 					</div>
-					<a href="#description" id="description" style="color: inherit; text-decoration: none;">
-						<h3>description</h3>
-					</a>
-					<p>This defines the structure of data to which model can be applied.
-						To put simply it is an object with key values that may be
-					string, number, Date or an array thereof.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IModelDatum</span>
+						<span class="target">IModelNodeOutput</span>
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-kind-interface">
-				<h3 class="tsd-before-signature">Indexable</h3>
-				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>attr: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">[]</span></div>
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Defines the structure of data to which model can be applied</p>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imodelnodeoutput.html#false" class="tsd-kind-icon">false</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imodelnodeoutput.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="imodelnodeoutput.html#true" class="tsd-kind-icon">true</a></li>
+							</ul>
+						</section>
 					</div>
-					<a href="#description" id="description" style="color: inherit; text-decoration: none;">
-						<h3>description</h3>
-					</a>
-					<p>This defines the structure of data to which model can be applied.
-						To put simply it is an object with key values that may be
-					string, number, Date or an array thereof.</p>
-				</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="false" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> false</h3>
+					<div class="tsd-signature tsd-kind-icon">false<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/fd3a04c/src/model/ModelContracts.ts#L37">model/ModelContracts.ts:37</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines the value to give to the output attribute
+								if the test evaluates to false. This is optional
+							and if not defined nothing will be add to data.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="name" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/fd3a04c/src/model/ModelContracts.ts#L24">model/ModelContracts.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The optional name of the attribute to add to the data;
+								if not provided and a new value is to be added then
+								the name of the output attribute will be that which
+							was given for the parent object.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="true" class="tsd-anchor"></a>
+					<h3>true</h3>
+					<div class="tsd-signature tsd-kind-icon">true<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ca3tech/rulessjs/blob/fd3a04c/src/model/ModelContracts.ts#L30">model/ModelContracts.ts:30</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Defines the value to give to the output attribute
+							if the test evaluates to true</p>
+						</div>
+					</div>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -115,22 +163,33 @@
 					<li class=" tsd-kind-class">
 						<a href="../classes/model.html" class="tsd-kind-icon">Model</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="imodeldatum.html" class="tsd-kind-icon">IModel<wbr>Datum</a>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="imodeldescription.html" class="tsd-kind-icon">IModel<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="imodelnodedef.html" class="tsd-kind-icon">IModel<wbr>Node<wbr>Def</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="imodelnodeoutput.html" class="tsd-kind-icon">IModel<wbr>Node<wbr>Output</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imodelnodeoutput.html#false" class="tsd-kind-icon">false</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imodelnodeoutput.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="imodelnodeoutput.html#true" class="tsd-kind-icon">true</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

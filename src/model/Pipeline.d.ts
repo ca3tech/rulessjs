@@ -1,4 +1,4 @@
-import { IModelDatum, IPipelineNodeDescription } from "./ModelContracts";
+import { IModelDatum, IModelDescription } from "./ModelContracts";
 import { PipelineNode } from "./PipelineNode";
 export declare class Pipeline {
     private h;
@@ -57,7 +57,7 @@ export declare class Pipeline {
      * const pipe = new Pipeline(model);
      * ```
      */
-    constructor(description: IPipelineNodeDescription);
+    constructor(description: IModelDescription);
     /**
      * Extend the pipeline by appending a new node to the end
      *

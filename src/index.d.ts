@@ -1,6 +1,6 @@
-import { IModelDatum, IModelDescription } from "./model/ModelContracts";
+import { IModelDatum, IModelDescription, IModelNodeDef, IModelNodeOutput } from "./model/ModelContracts";
 import { Pipeline } from "./model/Pipeline";
-export { IModelDatum, IModelDescription };
+export { IModelDatum, IModelDescription, IModelNodeDef, IModelNodeOutput };
 export declare class Model {
     private pipe;
     /**

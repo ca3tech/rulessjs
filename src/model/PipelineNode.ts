@@ -1,13 +1,13 @@
 import { Operator } from "../operators/Operator";
-import { IOperatorDescription, IPipelineNodeDescription, IPipelineNodeOutput } from "./ModelContracts";
+import { IOperatorDescription, IModelDescription, IModelNodeOutput } from "./ModelContracts";
 import { OperatorFactory } from "./OperatorFactory";
 
 export class PipelineNode {
     private n : PipelineNode;
     private op : Operator;
-    private out : IPipelineNodeOutput;
+    private out : IModelNodeOutput;
 
-    constructor(description : IPipelineNodeDescription) {
+    constructor(description : IModelDescription) {
         const name = Object.keys(description)[0];
         const def = Object.assign({}, description[name]);
         this.out = def.output;
@@ -23,7 +23,7 @@ export class PipelineNode {
         return this.op;
     }
 
-    public get output() : IPipelineNodeOutput {
+    public get output() : IModelNodeOutput {
         return this.out;
     }
 
