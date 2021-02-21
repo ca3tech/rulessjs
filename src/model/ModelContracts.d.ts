@@ -17,9 +17,6 @@ export interface IPipelineNodeDef {
     [op: string]: ITestOpExpect | ITestOpDescription | ITestOpDescription[] | IPipelineNodeOutput;
     output: IPipelineNodeOutput;
 }
-export interface IPipelineNodeDescription {
-    [name: string]: IPipelineNodeDef;
-}
 /**
  * Defines the structure of a Model description
  *
@@ -37,6 +34,7 @@ export interface IPipelineNodeDescription {
  * =, !=, and, or.
  *
  * @example
+ * ```typescript
  * const def = {
  *   test1: {
  *     "=": {
@@ -80,15 +78,11 @@ export interface IPipelineNodeDescription {
  *     }
  *   }
  * }
+ * ```
  */
+export interface IPipelineNodeDescription {
+    [name: string]: IPipelineNodeDef;
+}
 export { IPipelineNodeDescription as IModelDescription };
-/**
- * Defines the structure of data to which model can be applied
- *
- * @description
- * This defines the structure of data to which model can be applied.
- * To put simply it is an object with key values that may be
- * string, number, Date or an array thereof.
- */
 export { ITestDatum as IModelDatum } from "../operators/TestContracts";
 //# sourceMappingURL=ModelContracts.d.ts.map

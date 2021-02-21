@@ -65,6 +65,74 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Defines the structure of a Model description</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>description</dt>
+						<dd><p>This interface defines the structure of the objects that
+								can be passed to the Model constructor. The attributes
+								of the object define the name of the step, and possibly
+								the output attribute, and the value of each is an object
+								that describes the test to perform on the data and the
+								value to assign to an output attribute if the test
+								evaluates to true. Each of these objects will have an
+								output attribute that defines the attribute and value
+								of that attribute to add to the data, and an attribute
+								that corresponds to the possible operators, e.g.
+							=, !=, and, or.</p>
+						</dd>
+						<dt>example</dt>
+						<dd><pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">def</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">test1:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;col1&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">1</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #001080">output:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;col1_is_1&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">true:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">false:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;FAIL&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">col2_is_2:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;col2&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #098658">2</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #001080">output:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">true:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">false:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;FAIL&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">  </span><span style="color: #001080">all_pass:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;and&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> [</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">          </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #001080">col1_is_1</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">      },</span>
+<span style="color: #000000">      {</span>
+<span style="color: #000000">        </span><span style="color: #A31515">&quot;=&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">          </span><span style="color: #001080">attr:</span><span style="color: #000000"> </span><span style="color: #001080">col2_is_2</span><span style="color: #000000">,</span>
+<span style="color: #000000">          </span><span style="color: #001080">value:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span>
+<span style="color: #000000">        }</span>
+<span style="color: #000000">      }</span>
+<span style="color: #000000">    ],</span>
+<span style="color: #000000">    </span><span style="color: #001080">output:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">true:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;PASS&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">false:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;FAIL&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -76,6 +144,11 @@
 			<section class="tsd-panel tsd-kind-interface">
 				<h3 class="tsd-before-signature">Indexable</h3>
 				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">IPipelineNodeDef</span></div>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Defines the structure of a Model description</p>
+					</div>
+				</div>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
